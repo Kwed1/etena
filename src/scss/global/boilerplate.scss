@@ -1,0 +1,11 @@
+@use '../util' as *;
+
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: $font;
+}

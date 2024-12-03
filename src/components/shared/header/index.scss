@@ -1,0 +1,40 @@
+.header {
+	background: linear-gradient(245.98deg, #5DBBDD 6.52%, #B5DFE9 79.47%);
+	height: 76px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px 40px;
+	display: flex;
+	align-items: center;
+	
+	& .container {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		
+		& .left_content {
+			font-size: 24px;
+			display: flex;
+			align-items: center;
+		};
+
+		& .right_content {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			button {
+				cursor: pointer;
+				width: 60px;
+				height: 38px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: #FFFFFF3D;
+				border-radius: 36px;
+				border: none
+			}
+		}
+	};
+}
