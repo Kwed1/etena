@@ -1,0 +1,55 @@
+.btn {
+	display: inline-flex;
+	height: 56px;
+	padding: 10px 30px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border: 0;
+	border-radius: 32px;
+	background: linear-gradient(234deg, #FF4A32 6.29%, #FF7E24 91.61%);
+	position: relative;
+	z-index: 1;
+	font-family: $baseFF;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 150%; /* 27px */
+	letter-spacing: -0.18px;
+	text-transform: uppercase;
+	color: $milk;
+	overflow: hidden;
+	transition: all .3s linear;
+
+	span{
+		position: relative;
+		z-index: 2;
+	}
+
+	&:after{
+		content: "";
+		display: block;
+		width: 56px;
+		height: 56px;
+		background: $milk;
+		border-radius: 50%;
+		position: absolute;
+		bottom: -47px;
+		left: -47px;
+		z-index: -1;
+		transition: all .3s linear;
+	}
+
+	&:hover {
+		color: $orange;
+
+		&:after{
+			width: calc(100% + 100px);
+			height: 200px;
+			/* bottom: 50%;
+			left: 50%;
+			transform: translate(50%, -50%); */
+		}
+	}
+  
+}
