@@ -23,16 +23,16 @@
 
 /* Базовые стили всего сайта
 -----------------------------*/
-@import "partials/base"; 
+@import "partials/base";
 
 @import "partials/titles";
-@import "partials/slick"; 
+@import "partials/slick";
 
 @import "partials/item-page";
 @import "partials/fancybox";
 @import "partials/table";
 
-
 @import "../components/shared/twosection/style.scss";
 @import "../components/shared/firstsection/styles.scss";
-@import "../components/shared/third-section/index.scss"
+@import "../components/shared/third-section/index.scss";
+@import "../components/shared/foursection/index.scss";
