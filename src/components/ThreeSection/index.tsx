@@ -32,38 +32,52 @@ export default function ThreeSection() {
         if(!deviceType) return;
 
         const endpoint = deviceType === DeviceType.MOBILE ? '-=150' : '400px';
+        const startpoint = deviceType === DeviceType.MOBILE ? '-=700' : '-=800'
+
+        console.log(endpoint)
         
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".js-three-section-trigger",
-                scrub: true,
-                start: "-=700 100",
+                // scrub: true,
+                start: `${startpoint} 100`,
                 end: `${endpoint} top`,
+                markers: true,
+                toggleActions: "restart none none none"
             },
         });
 
+        const tlMob = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".js-three-section-trigger",
+                scrub: false,
+                start: "-=300 100",
+                end: `${endpoint} top`,
+            },
+        })
+
         if(deviceType === DeviceType.MOBILE) {
-            tl.fromTo(
+            tlMob.fromTo(
                 ".three-section__bg-city",
                 { y: 300, opacity: 1 },
                 {
                     y: 0,
-                    duration: 50,
+                    duration: 2,
                     ease: "power2.out",
                 }
             );
-            tl.fromTo(
+            tlMob.fromTo(
                 ".three-section__bg-sun",
                 { y: 3700, opacity: 0 },
                 {
                     x: 0,
                     y: 0,
                     opacity: 1,
-                    duration: 3,
+                    duration: 2,
                     ease: "power2.out",
-                }
+                }, '-=3'
             );
-            tl.fromTo(
+            tlMob.fromTo(
                 ".three-section__hero-center",
                 { y: 600, opacity: 0 },
                 {
@@ -72,29 +86,29 @@ export default function ThreeSection() {
                     opacity: 1,
                     duration: 4,
                     ease: "power2.out",
-                }
+                }, '-=3'
             );
-            tl.fromTo(
+            tlMob.fromTo(
                 ".three-section__hero-left",
                 { x: -600, y: 600, opacity: 0 },
                 {
                     x: 0,
                     y: 0,
                     opacity: 1,
-                    duration: 4,
+                    duration: 3,
                     ease: "power2.out",
-                }
+                }, '-=3'
             );
-            tl.fromTo(
+            tlMob.fromTo(
                 ".three-section__hero-right",
                 { x: 600, y: 600, opacity: 0 },
                 {
                     x: 0,
                     y: 0,
                     opacity: 1,
-                    duration: 4,
+                    duration: 3,
                     ease: "power2.out",
-                }
+                }, '-=3'
             );
         } else if(deviceType === DeviceType.TABLET) {
             tl.fromTo(
@@ -165,8 +179,8 @@ export default function ThreeSection() {
                 ".three-section__bg-sun",
                 { y: 3700, opacity: 0 } ,
                 {
-                    x: '5%',
-                    y: 100,
+                    x: '13vw',
+                    y:40,
                     opacity: 2,
                     duration: 1,
                 }, '-=2'
