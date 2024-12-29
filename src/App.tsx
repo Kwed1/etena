@@ -1,19 +1,37 @@
-import FirstSection from './components/shared/firstsection'
-import FourSection from './components/shared/foursection';
-import Header from './components/shared/header'
-import ThirdSection from './components/shared/third-section';
-import TwoSection from './components/shared/twosection'
+import { useLayoutEffect, useState } from "react";
+import FirstSection from "./components/FirstSection";
+import FiveSection from "./components/FiveSection";
+import Footer from "./components/Footer";
+import FourSection from "./components/FourSection";
+import Header from "./components/Header";
+import Loader from "./components/Loader";
+import ThreeSection from "./components/ThreeSection";
 
-function App() {
-  return (
-    <div>
-    <Header />
-    <FirstSection/>
-    <TwoSection /> 
-    <ThirdSection />
-    <FourSection />
-    </div>
-  );
+export default function App() {
+    const [loading, setLoading] = useState<boolean>(true);
+
+    useLayoutEffect(() => {
+        if (loading) {
+            setTimeout(() => {
+                setLoading(false);
+            }, 0);
+        }
+    }, [loading]);
+
+    return (
+        <>
+            {/* {loading ? (
+                <Loader />
+            ) : ( */}
+                <>
+                    <Header />
+                    <FirstSection />
+                    <ThreeSection />
+                    <FourSection />
+                    <FiveSection />
+                    <Footer />
+                </>
+             {/* )} */}
+        </>
+    );
 }
-
-export default App;

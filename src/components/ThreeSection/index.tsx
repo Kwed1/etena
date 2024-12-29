@@ -1,0 +1,308 @@
+import sun from "../../assets/three-section/sun.webp";
+import hero_center from "../../assets/three-section/hero-center.webp";
+import hero_center_stone from "../../assets/three-section/hero-center-stone.webp";
+import hero_center_shadow from "../../assets/three-section/hero-center-shadow.webp";
+import pixel_2 from "../../assets/three-section/pixel-2.svg";
+import pixel_5 from "../../assets/three-section/pixel-5.svg";
+import hero_left from "../../assets/three-section/hero-left.webp";
+import hero_left_stone_1 from "../../assets/three-section/hero-left-stone-1.webp";
+import hero_left_stone_2 from "../../assets/three-section/hero-left-stone-2.webp";
+import pixel_3 from "../../assets/three-section/pixel-3.svg";
+import pixel_4 from "../../assets/three-section/pixel-4.svg";
+import hero_right from "../../assets/three-section/hero-right.webp";
+import hero_right_stone_1 from "../../assets/three-section/hero-right-stone-1.webp";
+import hero_right_stone_2 from "../../assets/three-section/hero-right-stone-2.webp";
+import pixel_1 from "../../assets/three-section/pixel-1.svg";
+import pixel_6 from "../../assets/three-section/pixel-6.svg";
+import "../../assets/three-section/bg.webp";
+import TwoSection from "../TwoSection";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+import useDeviceDetect, { DeviceType } from "../../hooks/useDeviceDetect";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ThreeSection() {
+
+    const {deviceType} = useDeviceDetect()
+
+    useEffect(() => {
+       
+        if(!deviceType) return;
+        
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".js-three-section-trigger",
+                scrub: true,
+                start: "-=700 100",
+                end: "400px top",
+            },
+        });
+
+        if(deviceType === DeviceType.MOBILE) {
+            tl.fromTo(
+                ".three-section__bg-city",
+                { y: 300, opacity: 1 },
+                {
+                    y: 0,
+                    duration: 50,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__bg-sun",
+                { y: 3700, opacity: 0 },
+                {
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    duration: 3,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__hero-center",
+                { y: 600, opacity: 0 },
+                {
+                    x: -90,
+                    y: -100,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__hero-left",
+                { x: -600, y: 600, opacity: 0 },
+                {
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__hero-right",
+                { x: 600, y: 600, opacity: 0 },
+                {
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+        } else if(deviceType === DeviceType.TABLET) {
+            tl.fromTo(
+                ".three-section__bg-city",
+                { y: 300, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__bg-sun",
+                { y: 3700, opacity: 0 },
+                {
+                    x: 0,
+                    y: 100,
+                    opacity: 1,
+                    scale: 1.1,
+                    duration: 3,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__hero-center",
+                { y: 600, opacity: 0 },
+                {
+                    x: -180,
+                    y: -200,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__hero-left",
+                { x: -600, y: 600, opacity: 0 },
+                {
+                    x: 0,
+                    y: -100,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+            tl.fromTo(
+                ".three-section__hero-right",
+                { x: 600, y: 600, opacity: 0 },
+                {
+                    x: -100,
+                    y: -100,
+                    opacity: 1,
+                    duration: 4,
+                    ease: "power2.out",
+                }
+            );
+        } else {
+            tl.fromTo(
+                ".three-section__bg-city",
+                { y: 900, opacity: 0},
+                {
+                    y: 400,
+                    opacity: 4,
+                },
+            ).to(".three-section__bg-city", {y: 0, duration: 2})
+            tl.fromTo(
+                ".three-section__bg-sun",
+                { y: 3700, opacity: 0 } ,
+                {
+                    x: '5%',
+                    y: 100,
+                    opacity: 2,
+                    duration: 1,
+                }, '-=2'
+            );
+            tl.fromTo(
+                ".three-section__hero-center",
+                { y: 600, opacity: 0},
+                {
+                    x: -150,
+                    y: -100,
+                    scale: 0.9,
+                    opacity: 2,
+                }, '-=1'
+            );
+            tl.fromTo(
+                ".three-section__hero-left",
+                { x: -600, y: 600, opacity: 0},
+                {
+                    x: 0,
+                    y: 150,
+                    scale: 0.9,
+                    opacity: 2,
+                }, '-=1'
+            );
+            tl.fromTo(
+                ".three-section__hero-right",
+                { x: 600, y: 600, opacity: 0},
+                {
+                    x: 30,
+                    y: 150,
+                    scale: 0.9,
+                    opacity: 2,
+                },'-=1'
+            );
+        }
+
+        
+    }, [deviceType]);
+
+    return (
+        <div className="three-section js-three-section">
+            <TwoSection />
+            <div className="js-three-section-trigger"></div>
+            <div className="three-section__bg">
+                <div className="three-section__bg-city js-three-city"></div>
+                <img
+                    className="three-section__bg-sun js-three-sun"
+                    src={sun}
+                    alt=""
+                />
+            </div>
+            <div className="three-section__container">
+                <div className="three-section__hero-center js-three-hero-center">
+                    <div className="three-section__hero-center-wrap">
+                        <img
+                            className="three-section__hero-center-main js-scale"
+                            src={hero_center}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__hero-center-stone"
+                            src={hero_center_stone}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__hero-center-shadow"
+                            src={hero_center_shadow}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__pixel-2 js-dotted"
+                            src={pixel_2}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__pixel-5 js-dotted"
+                            src={pixel_5}
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div className="three-section__hero-left js-three-hero-left">
+                    <div className="three-section__hero-left-wrap">
+                        <img
+                            className="three-section__hero-left-main js-scale"
+                            src={hero_left}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__hero-left-stone-1 js-dotted"
+                            src={hero_left_stone_1}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__hero-left-stone-2"
+                            src={hero_left_stone_2}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__pixel-3 js-dotted"
+                            src={pixel_3}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__pixel-4 js-dotted"
+                            src={pixel_4}
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div className="three-section__hero-right js-three-hero-right">
+                    <div className="three-section__hero-right-wrap">
+                        <div className="three-section__hero-right-main">
+                            <img className="js-scale" src={hero_right} alt="" />
+                        </div>
+                        <img
+                            className="three-section__hero-right-stone-1 js-dotted"
+                            src={hero_right_stone_1}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__hero-right-stone-2"
+                            src={hero_right_stone_2}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__pixel-1 js-dotted"
+                            src={pixel_1}
+                            alt=""
+                        />
+                        <img
+                            className="three-section__pixel-6 js-dotted"
+                            src={pixel_6}
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

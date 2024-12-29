@@ -60,7 +60,7 @@ $yellow: #EADF19;
 $yellow-light: #fff63c;
 $red: #ff0000;
 
-$gray10: scale-color($black,$lightness:10%); // 1a1a1a
+$gray10: #1a1a1a;
 
 $gradient-to-white: linear-gradient(90deg, rgba($white,0) 0%, $white 100%);
 
@@ -96,6 +96,7 @@ $baseBg: #64DFFF; //$brown;
 
 $family: $baseFF;
 
+$containerW: 1200px;
 $containerP: calc($grid-gutter-width / 2);
 
 $baseLinkColor: $gray;
@@ -121,17 +122,6 @@ $baseLinkColorHover: $black;
   }
 }
 
-// Starts at zero
-// Another grid mixin that ensures the min-width of the lowest breakpoint starts at 0.
-@mixin assert-starts-at-zero($map) { 
-  $values: map-values($map);
-  $first-value: nth($values, 1);
-  @if $first-value != 0 {
-    @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
-  }
-} 
-
-@include assert-starts-at-zero($grid-breakpoints);
 
 
 

@@ -1,0 +1,278 @@
+@use '../../scss/helpers/mixin.scss' as *;
+@use '../../scss/helpers/variables.scss' as *;
+
+.five-section{
+	background: 50% 50%/auto 100% no-repeat #38231e;
+	color: $milk;
+	position: relative;
+	z-index: 5;
+
+	*{
+		transition: all .3s;
+	}
+
+	&__trigger{
+		display: block;
+		width: 100%;
+		height: 0;
+		position: absolute;
+		top: -380px;
+		left: 0;
+		pointer-events: none;
+	}
+
+	&__wrapper{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__container{
+		max-width: 1345px;
+		margin: -280px auto 0;
+		position: relative;
+		z-index: 2;
+		padding: 0 20px;
+	}
+
+	&__row{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title{
+		flex: 1 1 auto;
+		max-width: 780px;
+		color: $orange;
+		margin-bottom: 0;
+		transform: translateY(200px);
+		transition: all .6s linear;
+	}
+
+	&__text{
+		margin-top: 140px;
+		letter-spacing: -0.18px;
+		transform: translateY(200px);
+		transition: all .6s linear;
+
+		p{
+			margin-bottom: 32px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__img{
+		height: 1240px;
+		position: relative;
+		z-index: 1;
+		transform: translateY(-200px);
+		transition: all .2s linear;
+
+		@include media($lg){
+			height: 1150px;
+		}
+
+		&-main{
+			margin: 0 auto;
+			display: block;
+			position: relative;
+			z-index: 1;
+		}
+
+		&-cloud-1{
+			position: absolute;
+			top: -25px;
+			left: -25px;
+			z-index: 4;
+			transform: translateY(70px);
+		}
+		&-cloud-2{
+			position: absolute;
+			top: 160px;
+			right: 10px;
+			z-index: 4;
+			transform: translateY(50px);
+		}
+		&-cloud-3{
+			position: absolute;
+			top: 135px;
+			left: 60px;
+			z-index: 4;
+			transform: translateY(70px);
+		}
+		&-cloud-4{
+			position: absolute;
+			top: -20px;
+			left: 670px;
+			z-index: 4;
+			transform: translateY(60px);
+		}
+		&-cloud-5{
+			position: absolute;
+			top: 80px;
+			left: 775px;
+			z-index: 4;
+			transform: translateY(80px);
+		}
+
+		&-bg{
+			background: url('../../assets/five-section/five-img.webp') 50% 50%/auto 100% no-repeat;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			position: relative;
+			z-index: 1;
+		}
+
+		&-shadow{
+			background: url('src/assets/five-section/five-shadows.webp') 50% 100%/auto 100% no-repeat;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			position: absolute;
+			z-index: 2;
+			bottom: -250px;
+			left: 0;
+		}
+	}
+
+	@media (max-width:980px) {
+		&__container{
+			//max-width: 1345px;
+			margin: -0px auto 0;
+		}
+
+		&__row{
+			transform: scale(1)!important;
+		}
+	
+		&__title{
+			flex: 1 1 auto;
+			max-width: 65%;
+			opacity: 1!important;
+			transform: translateY(100px);
+		}
+	
+		&__text{
+			margin-top: 20px;
+			font-size: 16px;
+			opacity: 1!important;
+			transform: translateY(100px);
+	
+			p{
+				margin-bottom: 24px;
+	
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__img{
+			transform: none!important;
+			// margin-top: 100px;
+			height: 950px;
+
+			&-main {
+				scale: 0.9;
+			}
+		}
+
+		&__wrapper{
+			position: static;
+		}
+	}
+
+	@media (max-width: 640px) {
+		&__container{
+			//max-width: 1345px;
+			padding-top: 200px;
+			margin: 0px auto 0;
+		}
+
+		&__row{
+			transform: scale(1)!important;
+			flex-wrap: wrap;
+		}
+	
+		&__title{
+			flex: 0 0 100%;
+			max-width: 100%;
+			opacity: 1!important;
+			transform: translateY(0px)!important;
+		}
+	
+		&__text{
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-top: 20px;
+			font-size: 14px;
+			opacity: 1!important;
+			transform: translateY(0px)!important;
+	
+			p{
+				margin-bottom: 24px;
+	
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__img{
+			transform: none!important;
+			// margin-top: 100px;
+			height: 580px;
+
+			&-main {
+				scale: 0.83333;
+			}
+
+			&-cloud-1{
+				position: absolute;
+				top: -15px;
+				left: 25px;
+				z-index: 4;
+				transform: translateY(70px);
+				max-width: 30%;
+			}
+			&-cloud-2{
+				top: 10px;
+				right: 10px;
+				transform: translateY(50px);
+				max-width: 25%;
+			}
+			&-cloud-3{
+				top: 15px;
+				left: 60px;
+				transform: translateY(70px);
+				max-width: 20%;
+			}
+			&-cloud-4{
+				top: -20px;
+				left: 50%;
+				transform: translateY(60px);
+				max-width: 25%;
+			}
+			&-cloud-5{
+				top: -30px;
+				left: 35%;
+				z-index: 4;
+				transform: translateY(80px);
+				max-width: 15%;
+			}
+		}
+
+		&__wrapper{
+			position: static;
+		}
+	}
+}

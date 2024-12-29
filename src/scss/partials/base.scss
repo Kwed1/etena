@@ -1,3 +1,5 @@
+@use '.././helpers/variables.scss' as *;
+@use '.././helpers/mixin.scss' as *;
 * {
 	margin: 0;
 	padding: 0;
@@ -171,6 +173,7 @@ a:hover {
 .container {
 	padding-left: $containerP;
 	padding-right: $containerP;
+	max-width: $containerW;
 	margin-left: auto;
 	margin-right: auto;
 	/* @include mq('dekstop') {

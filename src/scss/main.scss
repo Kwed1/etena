@@ -1,0 +1,68 @@
+// Normalize
+@use "./libs/normalize.scss" as *;
+
+// Fonts
+@use "./partials/fonts.scss" as *;
+@use "./partials/item-page.scss" as *;
+@use "./partials/mCustomScrollbar.scss" as *;
+@use "./partials/about-sprite-svg.scss" as *;
+@use "./partials/buttons.scss" as *;
+@use "./partials/calendar.scss" as *;
+@use "./partials/checkbox.scss" as *;
+@use "./partials/fancybox.scss" as *;
+@use "./partials/forms.scss" as *;
+@use "./partials/modifiers.scss" as *;
+@use "./partials/nice-select.scss" as *;
+@use "./partials/range-slider.scss" as *;
+@use "./partials/services-sprite-svg.scss" as *;
+// Sprite SVG
+@use "./partials/sprite-svg.scss" as *;
+
+// Variables
+@use "helpers/variables" as *;
+@use "helpers/functions.scss" as *;
+
+// Functions
+@use "helpers/functions" as *;
+
+// Breakpoints
+@use "helpers/breakpoints" as *;
+
+// Grid Framework
+@use "helpers/grid-framework" as *;
+
+// Grid
+@use "helpers/grid" as *;
+
+// Mixins (с глобальным доступом)
+@use "./helpers/mixin.scss" as *;
+
+/* Ссылки */
+@use "./partials/link.scss" as *;
+
+/* Сетка */
+@use "partials/grid" as *;
+
+
+/* Базовые стили всего сайта */
+@use "partials/base" as *; 
+
+/* TITLES */
+@use "partials/titles" as *;
+@use "partials/slick" as *; 
+
+/* Страница товара */
+@use "./partials/item-page.scss" as *;
+
+/* Таблицы */
+@use "./partials/table.scss" as *;
+
+/* Шапка сайта */
+@use "../components/Header/index.scss" as *;
+@use "../components/FirstSection/styles.scss" as *;
+@use "../components/TwoSection/styles.scss";
+@use "../components/ThreeSection/styles.scss" as *;
+@use "../components/FourSection/styles.scss" as *;
+@use "../components/FiveSection/styles.scss" as *;
+@use "../components/Footer/styles.scss" as *;
+@use "../components/Loader/index.scss" as *;

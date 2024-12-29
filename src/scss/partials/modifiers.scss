@@ -1,3 +1,5 @@
+@use '../helpers/mixin.scss' as *;
+@use '../helpers/variables.scss' as *;
 @include classMod(d-block) {
   display: block;
 }

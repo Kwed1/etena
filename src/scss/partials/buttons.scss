@@ -1,5 +1,6 @@
+@use '../../scss/helpers/variables.scss' as *;
 .btn {
-	display: inline-flex;
+	display: flex;
 	height: 56px;
 	padding: 10px 30px;
 	flex-direction: column;

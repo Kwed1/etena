@@ -1,3 +1,5 @@
+@use '../helpers/mixin.scss' as *;
+@use '../helpers/variables.scss' as *;
 .lnk,
 a {
   color: inherit;

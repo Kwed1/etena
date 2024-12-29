@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -5,23 +7,29 @@
   fill: currentColor;
 }
 
+$base-size: 512; // можно создать переменную для базового значения
+
 .icon_about-section-icon-1 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+  font-size: math.div($base-size, 10) * 1rem;  // 51.2rem
+  width: math.div($base-size, $base-size) * 1em;  // 1em
 }
+
 .icon_about-section-icon-2 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+  font-size: math.div($base-size, 10) * 1rem;  // 51.2rem
+  width: math.div($base-size, $base-size) * 1em;  // 1em
 }
+
 .icon_about-section-icon-3 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+  font-size: math.div($base-size, 10) * 1rem;  // 51.2rem
+  width: math.div($base-size, $base-size) * 1em;  // 1em
 }
+
 .icon_about-section-icon-4 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+  font-size: math.div($base-size, 10) * 1rem;  // 51.2rem
+  width: math.div($base-size, $base-size) * 1em;  // 1em
 }
+
 .icon_about-section-icon-5 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+  font-size: math.div($base-size, 10) * 1rem;  // 51.2rem
+  width: math.div($base-size, $base-size) * 1em;  // 1em
 }

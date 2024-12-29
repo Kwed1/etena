@@ -1,0 +1,420 @@
+@use '../../scss/helpers/mixin.scss' as *;
+@use '../../scss/helpers/variables.scss' as *;
+
+.three-section {
+    background: linear-gradient(180deg, #ff4a32 -1.72%, #ff7e24 101.76%);
+    position: relative;
+    z-index: 4;
+    height: calc(1250px + 500px);
+    padding-bottom: 300px;
+    //height: calc(100vh + 600px);
+    //overflow: hidden;
+    padding-top: 500px;
+
+    &__bg {
+        position: absolute;
+        top: 400px;
+        left: 0;
+        width: 100%;
+        height: 1350px; //100%;
+        display: block;
+        z-index: -1;
+        pointer-events: none;
+
+        &-city {
+            width: 100%;
+            display: block;
+            position: relative;
+            top: 0;
+            z-index: 3;
+            height: 100%;
+            object-fit: contain;
+            max-width: none;
+            object-position: 50% 0%;
+            background: url("src/assets/three-section/bg.webp") 50% 0 / 100% 100%
+                no-repeat;
+        }
+        &-sun {
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: -200px; //-100px;
+            // transform: translate3d(-50%, 0px, 0px) scale(0.8);
+        }
+    }
+
+    &__container {
+        width: 100%;
+        //max-width: 1440px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        //--scale: 20%;
+        height: 950px;
+        padding: 0 20px;
+    }
+
+    &__pixel {
+        //center
+        &-2 {
+            position: absolute;
+            top: 125px;
+            right: -15px;
+            z-index: 4;
+            transition: all 4s linear;
+            animation: opacity 4s linear infinite reverse;
+        }
+        &-5 {
+            position: absolute;
+            top: 275px;
+            left: -30px;
+            z-index: 4;
+            transition: all 4s linear;
+            animation: opacity 3s linear infinite reverse;
+        }
+
+        //left
+        &-3 {
+            position: absolute;
+            top: 180px;
+            left: 0;
+            z-index: 4;
+            transition: all 4s linear;
+            animation: opacity 6s linear infinite reverse;
+        }
+        &-4 {
+            position: absolute;
+            top: 40px;
+            right: 5px;
+            z-index: 4;
+            transition: all 4s linear;
+            animation: opacity 5s linear infinite reverse;
+        }
+
+        //right
+        &-1 {
+            position: absolute;
+            top: 250px;
+            left: calc(100% + 10px);
+            z-index: 4;
+            transition: all 4s linear;
+            animation: opacity 6s linear infinite reverse;
+        }
+        &-6 {
+            position: absolute;
+            top: 165px;
+            left: calc(100% + 40px);
+            z-index: 4;
+            transition: all 4s linear;
+            animation: opacity 5s linear infinite reverse;
+        }
+    }
+
+    &__hero {
+        &-center {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            z-index: 3;
+
+            &-wrap {
+                position: relative;
+                z-index: 3;
+                max-width: none;
+                animation: img2 20s linear infinite;
+            }
+
+            &-main {
+                position: relative;
+                z-index: 3;
+                max-width: none;
+                transform-origin: 50% 100% !important;
+            }
+            &-stone {
+                position: absolute;
+                top: 250px;
+                left: -265px;
+                z-index: 0;
+                max-width: none;
+            }
+            &-shadow {
+                position: absolute;
+                top: 425px;
+                left: -185px;
+                z-index: 1;
+                max-width: none;
+            }
+        }
+
+        &-left {
+            position: absolute;
+            top: 25%;
+            left: 135px;
+            z-index: 4;
+            //transform: translateX(-200px);
+            margin-left: 0px;
+
+            @include media($lg) {
+                left: 35px;
+            }
+            @include media($md) {
+                top: calc(100px - var(--scale));
+            }
+
+            &-wrap {
+                position: relative;
+                z-index: 3;
+                max-width: none;
+                animation: img2 13s linear infinite;
+            }
+
+            &-main {
+                position: relative;
+                z-index: 4;
+                max-width: none;
+                transform-origin: 50% 100% !important;
+            }
+
+            &-stone-1 {
+                position: absolute;
+                top: 405px;
+                left: calc(100% + 15px);
+                z-index: 1;
+                max-width: none;
+                transition: all 5s linear;
+                opacity: 1 !important;
+            }
+
+            &-stone-2 {
+                position: absolute;
+                top: 375px;
+                left: -105px;
+                z-index: 0;
+                max-width: none;
+            }
+        }
+
+        &-right {
+            position: absolute;
+            top: 25%;
+            right: 170px;
+            z-index: 4;
+            //transform: translateX(200px);
+            margin-right: 0px;
+
+            @include media($lg) {
+                right: 70px;
+            }
+            @include media($md) {
+                top: calc(100px - var(--scale));
+            }
+
+            &-wrap {
+                position: relative;
+                z-index: 3;
+                max-width: none;
+                animation: img2 18s linear infinite;
+            }
+
+            &-main {
+                position: relative;
+                z-index: 4;
+                max-width: none;
+                animation: img1 20s linear infinite;
+
+                img {
+                    transform-origin: 50% 100% !important;
+                }
+            }
+            &-stone-1 {
+                position: absolute;
+                top: 290px;
+                left: calc(100% + 5px);
+                z-index: 5;
+                max-width: none;
+                transition: all 5s linear;
+            }
+
+            &-stone-2 {
+                position: absolute;
+                top: 105px;
+                left: -90px;
+                z-index: 0;
+                max-width: none;
+            }
+        }
+    }
+
+    @media (max-width: 1450px) {
+
+        &__container {
+            height: 950px;
+        }
+
+        &__bg {
+            &-city {
+                top: 0%;
+            }
+            &-sun {
+                top: -200px;
+            }
+        }
+
+        &__hero {
+            &-center {
+                top: 40%;
+            }
+            &-left {
+                top: 30%;
+                margin-left: 0;
+            }
+            &-right {
+                top: 30%;
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (max-width: 980px) {
+
+        &__container {
+            height: 950px;
+        }
+
+        &__bg {
+            &-city {
+                top: 0%;
+            }
+
+            &-sun {
+                top: -200px;
+
+            }
+        }
+
+        &__hero {
+            &-center {
+                top: 50%;
+                scale: 0.833333;
+            }
+            &-left {
+                top: 55%;
+                scale: 0.833333;
+                margin-left: 0;
+            }
+            &-right {
+                top: 55%;
+                scale: 0.833333;
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding-top: 250px;
+        height: 890px;
+        
+        &__bg {
+            height: 890px;
+            top: 240px;
+
+            &:after {
+                content: "";
+                display: block;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #38231e;
+            }
+
+            &-city {
+                margin-top: -60%;
+                top: 0%;
+            }
+            &-sun {
+                top: -200px;
+            }
+        }
+        &__container {
+            height: 410px;
+        }
+
+        &__hero {
+            &-center {
+                top: 0 !important;
+                left: 50%;
+                transform: translate(-50%, 0%) scale(0.833333);
+
+                &-wrap {
+                    max-width: 60vw;
+                }
+                &-main {
+                    max-width: 100%;
+                    transform: scale(1) !important;
+                }
+                &-stone {
+                    top: 60%;
+                    left: -60%;
+                    z-index: 0;
+                    max-width: 200%;
+                }
+                &-shadow {
+                    top: 78%;
+                    left: -128px;
+                    z-index: 1;
+                    max-width: 177%;
+                }
+            }
+
+            &-left {
+                top: auto !important;
+                bottom: 0;
+                left: 0;
+                margin-left: 0px;
+                scale: 0.83333;
+
+                &-wrap {
+                    max-width: 45vw;
+                }
+                &-main {
+                    max-width: 100%;
+                }
+                &-stone-1 {
+                    display: none;
+                }
+
+                &-stone-2 {
+                    max-width: 200%;
+                    top: 257px;
+                    left: -70%;
+                }
+            }
+
+            &-right {
+                top: auto !important;
+                bottom: 0;
+                right: 0px;
+                margin-right: -0px;
+                scale: 0.83333;
+
+                &-wrap {
+                    max-width: 45vw;
+                }
+                &-main {
+                    max-width: 100%;
+                }
+                &-stone-1 {
+                    display: none;
+                }
+
+                &-stone-2 {
+                    top: 20%;
+                    left: -50px;
+                    max-width: 200%;
+                }
+            }
+        }
+    }
+}

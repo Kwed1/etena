@@ -1,0 +1,110 @@
+@use '../../scss/helpers/mixin.scss' as *;
+@use '../../scss/helpers/variables.scss' as *;
+
+.header {
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    &__container {
+        max-width: none;
+        padding-left: 32px;
+        padding-right: 32px;
+
+        @include media($sm) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 1;
+
+        &-orange {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-clip-path: circle(0px at 100% 50%);
+            clip-path: circle(0px at 100% 50%);
+
+            -webkit-transition: -webkit-clip-path 1s
+                cubic-bezier(0.52, 0.01, 0.16, 1);
+            transition: clip-path 1s cubic-bezier(0.52, 0.01, 0.16, 1);
+        }
+
+        img {
+            display: block;
+        }
+
+        &:hover & {
+            &-orange {
+                -webkit-clip-path: circle(120px at 100% 50%);
+                clip-path: circle(120px at 100% 50%);
+            }
+        }
+    }
+
+    
+
+    .socials-block {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media (max-width:640px) {
+            gap: 4px;
+        }
+    }
+
+    .socials-block__icon {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.24);
+        border-radius: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38px;
+        padding: 0 18px;
+        transition: all 0.3s ease-in-out;
+
+        .icon {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            background-color: #fff;
+
+            & .icon {
+                fill: #FF4B20;
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 6px 0;
+
+        .socials-block__icon {
+            padding: 0 14px;
+            height: 30px;
+            .icon {
+                flex: 0 0 16px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}

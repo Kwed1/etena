@@ -1,3 +1,5 @@
+@use '../helpers/mixin.scss' as *;
+@use '../helpers/variables.scss' as *;
 /* Ion.Calendar
 // Version 2.0.1, build: 91
 // © 2013 Denis Ineshin | IonDen.com
@@ -39,7 +41,7 @@
  
 .ic__header {
     position: relative;
-    background: $pink-2;
+    background: #EF95AE;
     height: 100px;
     margin: 0 -20px;
     @include flex(center,center,center);
@@ -64,7 +66,7 @@
         svg{ fill: none; stroke: $white; stroke-width: 8px;  width: 16px; height: 16px; }  
     }
     .ic__prev:hover, .ic__next:hover {
-        background-color: $pink-2; 
+        background-color: #EF95AE; 
     }
        /*  .ic__prev div, .ic__next div {
             position: absolute;
@@ -97,17 +99,6 @@
     }
     .ic__year { margin: 0; max-width: 125px!important; 
         select{ padding-left: 50px; padding-right: 30px; background: url('../images/calendar.svg') 15px 50%/18px auto no-repeat $white; }
-        .b-form__group{   }
-    }
-    .ic__header select {
-        /* -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        width: 100%;
-        border: 1px solid #000;
-        padding: 2px;
-        font-size: 14px;
-        font-weight: bold; */
     }
     .ic__header select:focus {
         outline: none;
@@ -148,7 +139,7 @@
         cursor: pointer;
     }
     .ic__days .ic__day:hover span{
-        background: $pink-2;
+        background: #EF95AE;
         color: $white;
     }
     .ic__days .ic__day-empty {

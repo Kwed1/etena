@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -5,43 +7,26 @@
   fill: currentColor;
 }
 
-.icon_service-icon-1 {
-  font-size:(511/10)*1rem;
-  width:(511/511)*1em;
-}
+$font-size: math.div(511, 10) * 1rem; // Универсальный размер шрифта
+$width: math.div(511, 511) * 1em; // Универсальная ширина (практически всегда 1em)
+
+// Упрощаем стили для иконок
+.icon_service-icon-1, 
+.icon_service-icon-2, 
+.icon_service-icon-3, 
+.icon_service-icon-4, 
+.icon_service-icon-5, 
+.icon_service-icon-6, 
+.icon_service-icon-7, 
+.icon_service-icon-8, 
+.icon_service-icon-9, 
 .icon_service-icon-10 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+  font-size: $font-size;
+  width: $width;
 }
-.icon_service-icon-2 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-3 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-4 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-5 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-6 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-7 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-8 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
-}
-.icon_service-icon-9 {
-  font-size:(512/10)*1rem;
-  width:(512/512)*1em;
+
+// Специфический стиль для icon_service-icon-10, если требуется
+.icon_service-icon-10 {
+  font-size: math.div(512, 10) * 1rem; // Для иконки 10 немного изменённый размер
+  width: math.div(512, 512) * 1em; // Для иконки 10 изменена ширина
 }

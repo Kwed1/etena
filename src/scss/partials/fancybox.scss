@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@use '../helpers/mixin.scss' as *;
 .test{ display: none; }
 
 body.fancybox-active {

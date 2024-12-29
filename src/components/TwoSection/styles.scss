@@ -1,0 +1,238 @@
+@use "../../scss/helpers/mixin.scss" as *;
+@use "../../scss/helpers/variables.scss" as *;
+
+.two-section {
+    //position: relative;
+    z-index: 3;
+    position: absolute;
+    top: -52vh; //-49vh;
+    left: 0;
+    width: 100%;
+    //margin-top: -400px;
+    //margin-bottom: -450px;
+
+    @include media($lg) {
+        top: -52vh;
+    }
+    @include media($sm) {
+        top: -42vh;
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 1480px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        height: 62rem; //1024px;
+        padding: 0 20px;
+    }
+
+    &__shadow {
+        position: absolute;
+        top: 278px;
+        left: 0;
+        width: 100%;
+        z-index: 6;
+    }
+    &__shadow2 {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        z-index: 5;
+        //height: 530px;
+        //width: 1440px;
+
+        @include media($md) {
+            top: 120px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__mright {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+
+        img {
+            transform-origin: 100% 0;
+        }
+
+        @include media($lg) {
+            &--hide-lg {
+                display: none;
+            }
+        }
+        @include media($md) {
+            &--hide-lg {
+                display: block;
+            }
+        }
+
+        @include media($md) {
+            right: -15vw;
+        }
+        @include media($sm) {
+            right: -15vw;
+        }
+    }
+
+    &__mleft {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+
+        img {
+            transform-origin: 0% 0;
+        }
+
+        @include media($md) {
+            left: -15vw;
+        }
+        @include media($sm) {
+            left: -15vw;
+        }
+    }
+
+    &__hero {
+        position: absolute;
+        top: 160px;
+        left: 50%;
+        transform: translateX(calc(-50% - 7rem));
+        z-index: 7;
+
+        img {
+            transform-origin: 50% 100%;
+        }
+    }
+
+    &__back {
+        position: absolute;
+        top: 215px;
+        left: 21rem;
+        z-index: 3;
+
+        @include media($md) {
+            left: 7rem;
+        }
+    }
+
+    &__below {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        //transform: translateX(-50%);
+        z-index: 1;
+        width: 100%;
+
+        @media (min-width: 1941px) {
+            top: 50%;
+            bottom: auto;
+        }
+
+        @include media($xlg) {
+            bottom: 50px;
+        }
+        @include media($md) {
+            top: auto;
+            bottom: 50px;
+        }
+    }
+
+    &.is-first-anim {
+        animation: firstTwoShowY 3s ease;
+    }
+
+    &.is-first-anim & {
+        &__mleft {
+            animation: firstMLeft 4s ease;
+        }
+        &__mright {
+            animation: firstMRight 4s ease;
+        }
+    }
+
+	@media (max-width: 640px) {
+		top: -10vh !important;
+		
+		&__container {
+            height: 340px;
+        }
+
+        &__back {
+            width: 300px;
+            top: 54px;
+            left: 2rem;
+        }
+
+        &__shadow {
+            top: 95px;
+        }
+
+        &__shadow2 {
+            top: 70px;
+        }
+
+        &__hero {
+            transform: translateX(calc(-50% - 5rem));
+            top: 20px;
+            z-index: 5;
+
+            img {
+                transform: scale(1) !important;
+            }
+        }
+
+        &__mright {
+            top: 0;
+            right: -10%;
+            width: 300px;
+        }
+
+        &__mleft {
+            top: 0;
+            left: -10%;
+            width: 300px;
+        }
+	}
+}
+
+@keyframes firstTwoShowY {
+    0% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes firstMLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes firstMRight {
+    0% {
+        opacity: 1;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

@@ -1,3 +1,5 @@
+@use '../helpers/mixin.scss' as *;
+@use '../helpers/variables.scss' as *;
 .item-page{ color: $gray-dark; 
 
 	p, ol, ul, .table-responsive{margin-bottom: 20px;

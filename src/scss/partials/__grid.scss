@@ -1,3 +1,6 @@
+@use '../helpers/variables.scss' as *;
+@use '../helpers/mixin.scss' as *;
+@use "sass:math";
 @mixin make-grid-columns($i: 1, $list: ".col-xxs-#{$i}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
   @for $i from (1 + 1) through $grid-columns {
     $list: "#{$list}, .col-xxs-#{$i}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
@@ -141,19 +144,24 @@
 @include make-grid-columns;
 @include make-grid(xxs);
 
-@media (min-width: #{$breakpointsPhoneWide - 1}) {
+$breakpoint-phone-wide: math.div($breakpointsPhoneWide, 1) - 1;
+$breakpoint-tablet: math.div($breakpointsTablet, 1) - 1;
+$breakpoint-tablet-wide: math.div($breakpointsTabletWide, 1) - 1;
+$breakpoint-desktop: math.div($breakpointsDesktop, 1) - 1;
+
+@media (min-width: #{$breakpoint-phone-wide}) {
   @include make-grid(xs);
 }
 
-@media (min-width: #{$breakpointsTablet - 1}) {
+@media (min-width: #{$breakpoint-tablet}) {
   @include make-grid(sm);
 }
 
-@media (min-width: #{$breakpointsTabletWide - 1}) {
+@media (min-width: #{$breakpoint-tablet-wide}) {
   @include make-grid(md);
 }
 
-@media (min-width: #{$breakpointsDesktop - 1}) {
+@media (min-width: #{$breakpoint-desktop}) {
   @include make-grid(lg);
 }
 

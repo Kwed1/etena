@@ -1,5 +1,7 @@
-@import './variables.scss';
-
+@use '../../scss/helpers/variables.scss' as *;
+@use '../../scss/helpers/breakpoints.scss' as *;
+@use '../../scss/helpers/functions.scss' as *;
+@use 'sass:map';
 @mixin flex ($justifyContent: flex-start, $alignItems: flex-start, $align-content: flex-start, $wrap: wrap, $flex-direction: row ){
 	display: flex;
 	
@@ -37,16 +39,17 @@
 }
 
 @mixin mq($width, $type: max) {
-  @if map_has_key($breakpoints, $width) {
-   $width: map_get($breakpoints, $width);
-   @if $type == max {
-    $width: $width - 1px;
-   }
-   @media only screen and (#{$type}-width: $width) {
-    @content;
-   }
+  @if map.has-key($breakpoints, $width) { // Используем map.has-key
+    $width: map.get($breakpoints, $width); // Используем map.get
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
   }
 }
+
 
 // медиа вставки  @include media($max, $min){ ... }
 @mixin media($max: 0, $min: 0){
