@@ -1,8 +1,8 @@
-# Указываем базовый образ с Node.js 18
-FROM node:18
+# Указываем базовый образ
+FROM node:16
 
 # Устанавливаем рабочую директорию
-WORKDIR /
+WORKDIR /app
 
 # Копируем package.json и package-lock.json
 COPY package*.json ./
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Указываем, что приложение будет работать на порту 5173
-EXPOSE 8000
+EXPOSE 5173
 
 # Запускаем приложение в режиме разработки
 CMD ["npm", "run", "dev"]
