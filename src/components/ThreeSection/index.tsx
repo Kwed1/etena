@@ -30,13 +30,15 @@ export default function ThreeSection() {
     useEffect(() => {
        
         if(!deviceType) return;
+
+        const endpoint = deviceType === DeviceType.MOBILE ? '-=150' : '400px';
         
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".js-three-section-trigger",
                 scrub: true,
                 start: "-=700 100",
-                end: "400px top",
+                end: `${endpoint} top`,
             },
         });
 
