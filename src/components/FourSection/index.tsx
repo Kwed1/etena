@@ -35,17 +35,21 @@ export default function FourSection() {
     
     useEffect(() => {
         if(!deviceType) return;
-        const sectionH = sectionRef.current?.offsetHeight;
-
-        const scrollPosition = deviceType === DeviceType.TABLET ? 2000 : 4000;
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".js-four-section-trigger",
                 start: `bottom +=100`,
-                end: `${(sectionH as number + scrollPosition)} top`,
-                pin: ".four-section",
+                end: `+=${(7400 - 2513)} top`,
+                pin: deviceType === DeviceType.MOBILE ? false : ".four-section",
                 scrub: true,
+                onUpdate: () => {
+                    const pinSpacer = (document.querySelector(".four-section") as Element).parentNode as Element;
+                    if (pinSpacer && pinSpacer.classList.contains("pin-spacer")) {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      (pinSpacer as any).style.height = `${6800}px`; // Установите нужную высоту
+                    }
+                },
             },
         });
 
@@ -66,20 +70,26 @@ export default function FourSection() {
             tl.to('.js-four-planet-2', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-2', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-2', {duration: 1, opacity: 1, y: '-520%'}).to('.js-four-planet-2', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
             tl.to('.js-four-planet-3', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-3', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-3', {duration: 1, opacity: 1, y: '-630%'}).to('.js-four-planet-3', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
         } else if(deviceType === DeviceType.MOBILE) {
-            tl.fromTo('.js-four-story', {top: '300px'}, {top: '0px', scale: 0.8})
-            tl.from('.js-four-contain-1', {y: 1000}).to('.js-four-contain-1', {y: 100}).to('.js-four-contain-1', {y: -1500}, '+=4')
-            tl.to('.four-section__img-main', {scale: 1.2}, '<0.1')
-            tl.from('.js-four-contain-2', {y: 1000}).to('.js-four-contain-2', {y: -650,}).to('.js-four-contain-2', {y: -1500}, '+=4')
-            tl.fromTo('.js-four-cloud-1', {y: 0}, {y: -1500}, '<0.2');
-            tl.fromTo(
-                '.js-four-contain-3',
-                {position: 'absolute', y: 0, opacity: 0, visibility: 'hidden' },
-                {y: '-635%', opacity: 1, visibility: 'visible', duration: 1 }
-            ).to('.js-four-contain-3', { opacity: 0.5, visibility: 'visible', duration: 2 }, '+=1')
-            tl.from('.js-four-cloud-2', {x: 0, y: 1000}, '<0.1').to('.js-four-cloud-2', {x: 150, y: -500}).to('.js-four-cloud-2', {x: 100, y: -900, scale: 1.2})
-            tl.to('.js-four-planet-1', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-1', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-1', {duration: 1, opacity: 1, y: '-310%'}).to('.js-four-planet-1', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
-            tl.to('.js-four-planet-2', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-2', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-2', {duration: 1, opacity: 1, y: '-420%'}).to('.js-four-planet-2', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
-            tl.to('.js-four-planet-3', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-3', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-3', {duration: 1, opacity: 1, y: '-530%'}).to('.js-four-planet-3', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
+            gsap.fromTo('.four-section__subtitle p', {opacity: 0}, {opacity: 1, duration: 3, scrollTrigger: {
+                trigger: '.four-section__subtitle',
+                start: 'top bottom',
+                end: 'bottom top',
+            }});
+            gsap.fromTo('.four-section__planet-img--i1 img', {y: -70, opacity: 0}, {y: 0, opacity: 1, duration: 1, scrollTrigger: {
+                trigger: '.four-section__planet-img--i1',
+                start: '-=30 bottom',
+                end: 'bottom top',
+            }});
+            gsap.fromTo('.four-section__planet-img--i2 img', {y: -70, opacity: 0}, {y: 0, opacity: 1, duration: 1, scrollTrigger: {
+                trigger: '.four-section__planet-img--i2',
+                start: '-=30 bottom',
+                end: 'bottom top',
+            }});
+            gsap.fromTo('.four-section__planet-img--i3 img', {y: -70, opacity: 0}, {y: 0, opacity: 1, duration: 1, scrollTrigger: {
+                trigger: '.four-section__planet-img--i3',
+                start: '-=30 bottom',
+                end: 'bottom top',
+            }});
         } else {
             tl.fromTo('.js-four-story', {top: '300px'}, {top: '-500px'})
             tl.from('.js-four-contain-1', {y: 1000}).to('.js-four-contain-1', {y: 50}).to('.js-four-contain-1', {y: -1500}, '+=4')

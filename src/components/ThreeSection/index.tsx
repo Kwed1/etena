@@ -1,25 +1,25 @@
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
-import { useEffect } from "react"
-import "../../assets/three-section/bg.webp"
-import hero_center_shadow from "../../assets/three-section/hero-center-shadow.webp"
-import hero_center_stone from "../../assets/three-section/hero-center-stone.webp"
-import hero_center from "../../assets/three-section/hero-center.webp"
-import hero_left_stone_1 from "../../assets/three-section/hero-left-stone-1.webp"
-import hero_left_stone_2 from "../../assets/three-section/hero-left-stone-2.webp"
-import hero_left from "../../assets/three-section/hero-left.webp"
-import hero_right_stone_1 from "../../assets/three-section/hero-right-stone-1.webp"
-import hero_right_stone_2 from "../../assets/three-section/hero-right-stone-2.webp"
-import hero_right from "../../assets/three-section/hero-right.webp"
-import pixel_1 from "../../assets/three-section/pixel-1.svg"
-import pixel_2 from "../../assets/three-section/pixel-2.svg"
-import pixel_3 from "../../assets/three-section/pixel-3.svg"
-import pixel_4 from "../../assets/three-section/pixel-4.svg"
-import pixel_5 from "../../assets/three-section/pixel-5.svg"
-import pixel_6 from "../../assets/three-section/pixel-6.svg"
-import sun from "../../assets/three-section/sun.webp"
-import useDeviceDetect, { DeviceType } from "../../hooks/useDeviceDetect"
-import TwoSection from "../TwoSection"
+import sun from "../../assets/three-section/sun.webp";
+import hero_center from "../../assets/three-section/hero-center.webp";
+import hero_center_stone from "../../assets/three-section/hero-center-stone.webp";
+import hero_center_shadow from "../../assets/three-section/hero-center-shadow.webp";
+import pixel_2 from "../../assets/three-section/pixel-2.svg";
+import pixel_5 from "../../assets/three-section/pixel-5.svg";
+import hero_left from "../../assets/three-section/hero-left.webp";
+import hero_left_stone_1 from "../../assets/three-section/hero-left-stone-1.webp";
+import hero_left_stone_2 from "../../assets/three-section/hero-left-stone-2.webp";
+import pixel_3 from "../../assets/three-section/pixel-3.svg";
+import pixel_4 from "../../assets/three-section/pixel-4.svg";
+import hero_right from "../../assets/three-section/hero-right.webp";
+import hero_right_stone_1 from "../../assets/three-section/hero-right-stone-1.webp";
+import hero_right_stone_2 from "../../assets/three-section/hero-right-stone-2.webp";
+import pixel_1 from "../../assets/three-section/pixel-1.svg";
+import pixel_6 from "../../assets/three-section/pixel-6.svg";
+import "../../assets/three-section/bg.webp";
+import TwoSection from "../TwoSection";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+import useDeviceDetect, { DeviceType } from "../../hooks/useDeviceDetect";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,6 +39,7 @@ export default function ThreeSection() {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".js-three-section-trigger",
+                // scrub: true,
                 start: `${startpoint} 100`,
                 end: `${endpoint} top`,
                 toggleActions: "restart none none none"
