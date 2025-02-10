@@ -117,7 +117,7 @@ export default function ThreeSection() {
             tl.fromTo(
                 ".three-section__bg-sun",
                 { x: '100vw - 50%', y: 3700, opacity: 0 },
-                { x: '5%', y: 40, opacity: 2, duration: 1 },
+                { x: '100vw - 50%', y: -200, opacity: 2, duration: 1 },
                 '-=2'
             );
             tl.fromTo(

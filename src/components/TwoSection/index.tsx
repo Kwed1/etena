@@ -1,12 +1,12 @@
-import mount_right from '../../assets/two-section/mountain-right.webp'
-import mount_left from '../../assets/two-section/mountain-left.webp'
+import gsap from 'gsap'
+import { useEffect } from 'react'
+import hero from '../../assets/two-section/hero.webp'
 import mount_back from '../../assets/two-section/mountain-back.webp'
+import mount_left from '../../assets/two-section/mountain-left.webp'
+import mount_right from '../../assets/two-section/mountain-right.webp'
 import mounts_below from '../../assets/two-section/mountains-below.webp'
 import shadow from '../../assets/two-section/shadow.webp'
 import shadows from '../../assets/two-section/shadows2.webp'
-import hero from '../../assets/two-section/hero.webp'
-import { useEffect } from 'react'
-import gsap from 'gsap'
 import useDeviceDetect, { DeviceType } from '../../hooks/useDeviceDetect'
 
 export default function TwoSection() {
