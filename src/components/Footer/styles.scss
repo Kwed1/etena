@@ -1,12 +1,15 @@
 @use '../../scss/helpers/mixin.scss' as *;
 @use '../../scss/helpers/variables.scss' as *;
+.footer__logo img {
+	height: 200px;
+}
 
 .footer {
 	height: 850px;
 	background: #38231e;
 	position: relative;
-	z-index: 5;
-	//overflow: hidden;
+	z-index: 12;
+	// overflow: hidden;
 	padding: 340px 0;
 
 	*{
@@ -71,12 +74,8 @@
 
 	&__logo{
 		position: absolute;
-		top: -110px;
-		left: 50%;
-		transform: translate(-50%,0%);
-		//opacity: 0;
-		//width: 100%;
-		max-width: calc(100vw - 40px);
+		bottom: 220px;
+		right: 200px;
 		z-index: 0;
 		pointer-events: none;
 		transition: all 0.5s linear;
@@ -97,7 +96,6 @@
 	&__title {
 		color: $milk;
 		margin-bottom: 40px;
-		visibility: hidden;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -231,7 +229,6 @@
 			top: calc(-115px + var(--scale));
 			max-width: calc(100vw - 40px);
 			transform: translateX(-50%);
-			width: 80vw;
 			
 			img{
 				transform: none!important;
@@ -256,7 +253,12 @@
 		}
 		
 		&__title{
-			display: none;
+			visibility: visible;
+			max-width: 250px;
+			text-align: center;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 24px;
 		}
 		&__logo{
 			top: auto; //calc(-25px + var(--scale));

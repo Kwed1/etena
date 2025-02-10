@@ -1,4 +1,4 @@
-export default function Soc2({ className }: { className: string, fill: string }) {
+export default function Soc2({ className, fill }: { className: string, fill: string }) {
     return (
         <svg
             className={className}

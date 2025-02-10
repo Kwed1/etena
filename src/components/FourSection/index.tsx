@@ -1,36 +1,35 @@
-import cloud_1 from "../../assets/four-section/cloud-1.webp";
-import img_1 from "../../assets/four-section/img-1.webp";
-import img_2 from "../../assets/four-section/img-2.webp";
-import pexel_1 from "../../assets/four-section/pexel-1.svg";
-import pexel_2 from "../../assets/four-section/pexel-2.svg";
-import pexel_3 from "../../assets/four-section/pexel-3.svg";
-import pexel_4 from "../../assets/four-section/pexel-4.svg";
-import pexel_5 from "../../assets/four-section/pexel-5.svg";
-import pexel_6 from "../../assets/four-section/pexel-6.svg";
-import pexel_7 from "../../assets/four-section/pexel-7.svg";
-import pexel_8 from "../../assets/four-section/pexel-8.svg";
-import pexel_9 from "../../assets/four-section/pexel-9.svg";
-import pexel_10 from "../../assets/four-section/pexel-10.svg";
-import pexel_11 from "../../assets/four-section/pexel-11.svg";
-import pexel_12 from "../../assets/four-section/pexel-12.svg";
-import pexel_13 from "../../assets/four-section/pexel-13.svg";
-import stone from "../../assets/four-section/stone.webp";
-import cloud_2 from "../../assets/four-section/cloud-2.webp";
-import planet_1 from "../../assets/four-section/planet-1.webp";
-import planet_2 from "../../assets/four-section/planet-2.webp";
-import planet_3 from "../../assets/four-section/planet-3.webp";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-import useDeviceDetect from "../../hooks/useDeviceDetect";
-import { DeviceType } from "../../hooks/useDeviceDetect";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useEffect, useRef } from "react"
+import cloud_1 from "../../assets/four-section/cloud-1.webp"
+import cloud_2 from "../../assets/four-section/cloud-2.webp"
+import img_1 from "../../assets/four-section/img-1.webp"
+import img_2 from "../../assets/four-section/img-2.webp"
+import pexel_1 from "../../assets/four-section/pexel-1.svg"
+import pexel_10 from "../../assets/four-section/pexel-10.svg"
+import pexel_11 from "../../assets/four-section/pexel-11.svg"
+import pexel_12 from "../../assets/four-section/pexel-12.svg"
+import pexel_13 from "../../assets/four-section/pexel-13.svg"
+import pexel_2 from "../../assets/four-section/pexel-2.svg"
+import pexel_3 from "../../assets/four-section/pexel-3.svg"
+import pexel_4 from "../../assets/four-section/pexel-4.svg"
+import pexel_5 from "../../assets/four-section/pexel-5.svg"
+import pexel_6 from "../../assets/four-section/pexel-6.svg"
+import pexel_7 from "../../assets/four-section/pexel-7.svg"
+import pexel_8 from "../../assets/four-section/pexel-8.svg"
+import pexel_9 from "../../assets/four-section/pexel-9.svg"
+import planet_1 from "../../assets/four-section/planet-1.webp"
+import planet_2 from "../../assets/four-section/planet-2.webp"
+import planet_3 from "../../assets/four-section/planet-3.webp"
+import planet_4 from "../../assets/four-section/planet-4.png"
+import stone from "../../assets/four-section/stone.webp"
+import useDeviceDetect, { DeviceType } from "../../hooks/useDeviceDetect"
 
 export default function FourSection() {
     gsap.registerPlugin(ScrollTrigger);
     const sectionRef = useRef<HTMLDivElement | null>(null);
 
     const {deviceType} = useDeviceDetect();
-    console.log(deviceType)
 
     
     useEffect(() => {
@@ -46,8 +45,7 @@ export default function FourSection() {
                 onUpdate: () => {
                     const pinSpacer = (document.querySelector(".four-section") as Element).parentNode as Element;
                     if (pinSpacer && pinSpacer.classList.contains("pin-spacer")) {
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      (pinSpacer as any).style.height = `${6800}px`; // Установите нужную высоту
+                      (pinSpacer as any).style.height = `${6800}px`;
                     }
                 },
             },
@@ -67,8 +65,9 @@ export default function FourSection() {
             ).to('.js-four-contain-3', { opacity: 0.5, visibility: 'visible', duration: 2 }, '+=1')
             tl.from('.js-four-cloud-2', {x: 0, y: 1000}, '<0.1').to('.js-four-cloud-2', {x: 150, y: -500}).to('.js-four-cloud-2', {x: 100, y: -1000})
             tl.to('.js-four-planet-1', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-1', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-1', {duration: 1, opacity: 1, y: '-400%'}).to('.js-four-planet-1', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
-            tl.to('.js-four-planet-2', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-2', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-2', {duration: 1, opacity: 1, y: '-520%'}).to('.js-four-planet-2', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
+            tl.to('.js-four-planet-2', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-2', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-2', {duration: 1, opacity: 1, y: '-480%'}).to('.js-four-planet-2', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
             tl.to('.js-four-planet-3', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-3', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-3', {duration: 1, opacity: 1, y: '-630%'}).to('.js-four-planet-3', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
+            tl.to('.js-four-planet-4', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-4', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-4', {duration: 1, opacity: 1, y: '-740%'}).to('.js-four-planet-4', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
         } else if(deviceType === DeviceType.MOBILE) {
             gsap.fromTo('.four-section__subtitle p', {opacity: 0}, {opacity: 1, duration: 3, scrollTrigger: {
                 trigger: '.four-section__subtitle',
@@ -90,6 +89,11 @@ export default function FourSection() {
                 start: '-=30 bottom',
                 end: 'bottom top',
             }});
+            gsap.fromTo('.four-section__planet-img--i4 img', {y: -70, opacity: 0}, {y: 0, opacity: 1, duration: 1, scrollTrigger: {
+                trigger: '.four-section__planet-img--i4',
+                start: '-=30 bottom',
+                end: 'bottom top',
+            }});
         } else {
             tl.fromTo('.js-four-story', {top: '300px'}, {top: '-500px'})
             tl.from('.js-four-contain-1', {y: 1000}).to('.js-four-contain-1', {y: 50}).to('.js-four-contain-1', {y: -1500}, '+=4')
@@ -104,6 +108,7 @@ export default function FourSection() {
             tl.to('.js-four-planet-1', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-1', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-1', {duration: 1, opacity: 1, y: '-520%'}).to('.js-four-planet-1', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
             tl.to('.js-four-planet-2', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-2', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-2', {duration: 1, opacity: 1, y: '-520%'}).to('.js-four-planet-2', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
             tl.to('.js-four-planet-3', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-3', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-3', {duration: 1, opacity: 1, y: '-520%'}).to('.js-four-planet-3', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
+            tl.to('.js-four-planet-4', {duration: 1, opacity: 0, y: '0%'}).to('.js-four-planet-4', {duration: 1, opacity: 0.5, y: '-400%'}).to('.js-four-planet-4', {duration: 1, opacity: 1, y: '-520%'}).to('.js-four-planet-4', {duration: 1, opacity: 0, y: '-1120%'}, '+=4');
         }
     }, [deviceType]);
 
@@ -326,6 +331,23 @@ export default function FourSection() {
                         <div className="four-section__planet js-four-planet-3">
                             <div className="four-section__planet-img four-section__planet-img--i3 js-scale">
                                 <img src={planet_3} alt="" />
+                            </div>
+                            <div className="four-section__planet-wrap">
+                                <div className="four-section__planet-title title-h1">
+                                    The Tideseekers
+                                </div>
+                                <div className="four-section__planet-text">
+                                    guardians of water, embody the depth and
+                                    adaptability of the ocean. Their spirits
+                                    flow with the grace and relentless force of
+                                    the tides, a clan as nurturing as it is
+                                    formidable.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="four-section__planet js-four-planet-4">
+                            <div className="four-section__planet-img four-section__planet-img--i4 js-scale">
+                                <img src={planet_4} alt="" />
                             </div>
                             <div className="four-section__planet-wrap">
                                 <div className="four-section__planet-title title-h1">

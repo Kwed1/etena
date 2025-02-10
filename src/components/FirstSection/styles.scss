@@ -4,10 +4,11 @@
 .first-section {
     position: relative;
     z-index: 4;
-    overflow: hidden;
+    // overflow: hidden;
     min-height: 680px;
     height: 100vh;
-    background: #64dfff;
+    // background: #64dfff;
+    margin-top:10rem;
     //transition: all .3s linear;
 
     @media (min-width: 1941px) {
@@ -102,7 +103,7 @@
 
     &__img-1 {
         position: absolute;
-        top: 30vh; //450px;
+        top: 16vh; //450px;
         left: 7rem;
         z-index: 2;
         //animation: img1 10s linear infinite reverse;
@@ -113,7 +114,7 @@
     }
     &__img-2 {
         position: absolute;
-        top: 30vh; //345px;
+        top: 3vh; //345px;
         right: 15rem;
         z-index: 2;
         //animation: img2 10s 1s linear infinite reverse;
@@ -127,7 +128,7 @@
     }
     &__img-3 {
         position: absolute;
-        top: 25vh; //14rem;
+        top: -8vh; //14rem;
         left: 22rem;
         z-index: 2;
         //animation: img3 12s linear infinite reverse;
@@ -171,12 +172,12 @@
     &__paradise {
         position: absolute;
         //top: 8rem;
-        bottom: 20px;
+        bottom: 165px;
         left: 50%;
         transform: translateX(calc(-50% - 2rem));
         z-index: 1;
         animation: paradise 15s .5s linear infinite reverse;
-        width: 99vh;
+        width: 113vh;
 
         img {
             transform-origin: 50% 60% !important;
@@ -202,12 +203,12 @@
 
     &__logo {
         position: absolute;
-        top: 3rem;
+        top: -9rem;
         left: 50%;
         transform: translateX(-50%);
         z-index: 0;
         //animation: logo 10s linear infinite reverse;
-        width: 95vh;
+        width:120vh;
 
         img {
             width: 100%;
@@ -223,7 +224,7 @@
 
     &__cloud-1 {
         position: absolute;
-        top: 11rem;
+        top: -7rem;
         right: 0;
         z-index: -1;
 
@@ -233,14 +234,14 @@
     }
     &__cloud-2 {
         position: absolute;
-        top: -3rem;
+        top: -12rem;
         right: 0;
         z-index: -17;
     }
     &__cloud-3 {
         position: absolute;
-        top: 4rem;
-        left: 0;
+        top: -7rem;
+        left: -15rem;
         z-index: -1;
     }
 
@@ -351,6 +352,7 @@
         //min-height: calc(100vh - var(--scale));
         //height: calc(100vh - var(--scale));
         min-height: 400px;
+        margin-top: 0;
     
         &.is-first-anim {
             .first-section__paradise {
@@ -368,7 +370,7 @@
             }
         }
         &__logo {
-            top: 25vh;
+            top: 15vh;
             width: 115vw;
 
             img {
@@ -432,7 +434,7 @@
             }
         }
         &__img-3 {
-            top: 43vh;
+            top: 24vh;
             left: 10%;
             width: 90px;
 

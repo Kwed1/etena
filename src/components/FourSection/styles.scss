@@ -363,14 +363,20 @@
 
             &--i2 {
                 &:after {
-                    opacity: 0.26;
+                    opacity: 0.36;
                     background: #f18126;
                 }
             }
             &--i3 {
                 &:after {
-                    opacity: 0.26;
+                    opacity: 0.36;
                     background: #1579b1;
+                }
+            }
+            &--i4 {
+                &:after {
+                    opacity: 0.55;
+                    background: #347E2C;
                 }
             }
         }

@@ -1,12 +1,14 @@
-import { useEffect } from "react";
-import cloud_1 from "../../assets/five-section/five-cloud-1.webp";
-import cloud_2 from "../../assets/five-section/five-cloud-2.webp";
-import cloud_3 from "../../assets/five-section/five-cloud-3.webp";
-import cloud_4 from "../../assets/five-section/five-cloud-4.webp";
-import cloud_5 from "../../assets/five-section/five-cloud-5.webp";
-import img_2 from "../../assets/five-section/five-img2.webp";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useEffect } from "react"
+import shadow from '../../assets/five-section/five-bg-shadow.png'
+import cloud_1 from "../../assets/five-section/five-cloud-1.webp"
+import cloud_2 from "../../assets/five-section/five-cloud-2.webp"
+import cloud_3 from "../../assets/five-section/five-cloud-3.webp"
+import cloud_4 from "../../assets/five-section/five-cloud-4.webp"
+import cloud_5 from "../../assets/five-section/five-cloud-5.webp"
+import img_2 from "../../assets/five-section/five-img2.webp"
+import shadows from '../../assets/five-section/five-shadows.webp'
 
 export default function FiveSection() {
     gsap.registerPlugin(ScrollTrigger)
@@ -87,7 +89,22 @@ export default function FiveSection() {
                     src={img_2}
                     alt=""
                 />
-                <div className="five-section__img-shadow"></div>
+                <div className="five-section__img-shadow">
+                    <img
+                        width={'100%'}
+                        className="five-section__img-shadow-img"
+                        src={shadow}
+                        alt="" 
+                    />
+                </div>
+                <div className="five-section__img-shadows">
+                    <img
+                        width={'100%'}
+                        className="five-section__img-shadows-img"
+                        src={shadows}
+                        alt="" 
+                    />
+                </div>
             </div>
             <div className="js-five-section-trigger"></div>
         </div>
