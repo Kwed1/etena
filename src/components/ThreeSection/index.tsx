@@ -2,6 +2,7 @@ import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import { useEffect } from "react"
 import "../../assets/three-section/bg.webp"
+import city from '../../assets/three-section/bg.webp'
 import hero_center_shadow from "../../assets/three-section/hero-center-shadow.webp"
 import hero_center_stone from "../../assets/three-section/hero-center-stone.webp"
 import hero_center from "../../assets/three-section/hero-center.webp"
@@ -20,7 +21,6 @@ import pixel_6 from "../../assets/three-section/pixel-6.svg"
 import sun from "../../assets/three-section/sun.webp"
 import useDeviceDetect, { DeviceType } from "../../hooks/useDeviceDetect"
 import TwoSection from "../TwoSection"
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ThreeSection() {
@@ -150,7 +150,9 @@ export default function ThreeSection() {
             <TwoSection />
             <div className="js-three-section-trigger"></div>
             <div className="three-section__bg">
-                <div className="three-section__bg-city js-three-city"></div>
+                <div className="three-section__bg-city js-three-city">
+                    <img src={city} alt="" />
+                </div>
                 <img
                     className="three-section__bg-sun js-three-sun"
                     src={sun}

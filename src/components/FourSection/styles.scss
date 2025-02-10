@@ -2,14 +2,6 @@
 @use '../../scss/helpers/variables.scss' as *;
 
 .four-section {
-    position: relative;
-    z-index: 5;
-    padding-top: 200px;
-    background: url("src/assets/four-section/bg.webp") 0 0/100% auto no-repeat
-        #38231e;
-    //height: 100vh;
-    //background: $brown;
-
     * {
         transition: all 0.3s;
     }

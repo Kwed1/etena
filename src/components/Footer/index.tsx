@@ -8,6 +8,9 @@ import footer_button_up from '../../assets/footer/footer-button-up.webp'
 import footer_hero from '../../assets/footer/footer-hero.webp'
 import footer_logo from '../../assets/footer/footer-logo.svg'
 import footer_mountain_front from '../../assets/footer/footer-mountain-front.webp'
+import mountain from '../../assets/footer/footer-mountain.webp'
+import firstShadow from '../../assets/footer/footer-shadow-1.webp'
+import secondShadow from '../../assets/footer/footer-shadow-2.webp'
 import useDeviceDetect, { DeviceType } from '../../hooks/useDeviceDetect'
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +58,9 @@ export default function Footer() {
         <footer className="footer js-footer">
             
             <div className='footer__trigger'></div>
-            <div className="footer__shadow-1"></div>
+            <div className="footer__shadow-1">
+                <img src={firstShadow} alt="" />
+            </div>
             <div className="footer__logo js-footer-logo">
                 <img
                     className="js-scale"
@@ -63,7 +68,9 @@ export default function Footer() {
                     alt=""
                 />
             </div>
-            <div className="footer__mountain"></div>
+            <div className="footer__mountain">
+                <img src={mountain} alt="" />
+            </div>
             <a className="footer__up js-scroll-up js-scale" onClick={scrollToTop}>
                 <div className="footer__up-pixel-left">
                     <img
@@ -88,7 +95,9 @@ export default function Footer() {
                 />
                 <img src={footer_button_up} alt="" />
             </a>
-            <div className="footer__shadow-2"></div>
+            <div className="footer__shadow-2">
+                <img src={secondShadow} alt="" />
+            </div>
             <img
                 className="footer__mountain-front"
                 src={footer_mountain_front}

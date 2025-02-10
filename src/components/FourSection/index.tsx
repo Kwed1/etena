@@ -1,6 +1,7 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useEffect, useRef } from "react"
+import background from '../../assets/four-section/bg.webp'
 import cloud_1 from "../../assets/four-section/cloud-1.webp"
 import cloud_2 from "../../assets/four-section/cloud-2.webp"
 import img_1 from "../../assets/four-section/img-1.webp"
@@ -112,8 +113,15 @@ export default function FourSection() {
         }
     }, [deviceType]);
 
+    const sectionStyle: React.CSSProperties = {
+        position: 'relative',
+        zIndex: 5,
+        paddingTop: '200px',
+        background: `url(${background}) 0 0/100% auto no-repeat #38231e`,
+    };
+
     return (
-        <div className="four-section js-four-section" ref={sectionRef}>
+        <div className="four-section js-four-section" ref={sectionRef} style={sectionStyle}>
             <img
                 className="four-section__cloud-1 js-four-cloud-1"
                 src={cloud_1}
