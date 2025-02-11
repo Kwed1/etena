@@ -56,12 +56,12 @@ export default function ThreeSection() {
             tlMob.fromTo(
                 ".three-section__bg-city",
                 { y: 300, opacity: 1 },
-                { y: 0, duration: 0.5, ease: "power2.out" }
+                { y: 0, duration: 1, ease: "power2.out" }
             );
             tlMob.fromTo(
                 ".three-section__bg-sun",
-                { y: 3700, opacity: 0 },
-                { x: 0, y: 0, opacity: 1, duration: 2, ease: "power2.out" }, '-=3'
+                { y: 2400, opacity: 0 },
+                { y: -95, opacity: 1, duration: 3 }, '-=3'
             );
             tlMob.fromTo(
                 ".three-section__hero-center",
@@ -116,8 +116,8 @@ export default function ThreeSection() {
             ).to(".three-section__bg-city", { y: 0, duration: 2 });
             tl.fromTo(
                 ".three-section__bg-sun",
-                { x: '100vw - 50%', y: 3700, opacity: 0 },
-                { x: '100vw - 50%', y: -200, opacity: 2, duration: 1 },
+                { y: 2700, opacity: 0 },
+                { y: -750, opacity: 2, duration: 1 },
                 '-=2'
             );
             tl.fromTo(
