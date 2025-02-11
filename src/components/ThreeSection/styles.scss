@@ -37,6 +37,7 @@
             position: absolute;
             z-index: -1;
             top: 40%;
+            left: 50%;
             transform: translate(-50%);
         }
     }
@@ -333,6 +334,7 @@
             }
             &-sun {
                 top: 0;
+                left: 0;
             }
         }
         &__container {

@@ -204,11 +204,11 @@
     &__logo {
         position: absolute;
         top: -9rem;
-        left: 50%;
+        left: 46%;
         transform: translateX(-50%);
         z-index: 0;
         //animation: logo 10s linear infinite reverse;
-
+        width:120vh;
         img {
             width: 100%;
         }
@@ -371,7 +371,7 @@
         &__logo {
             top: 16vh;
             width: 100vw;
-            left: 50%;
+            left: 0;
             transform: translateX(-50%);
         }
         &__cloud-1 {
