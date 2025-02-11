@@ -43,7 +43,7 @@ export default function Footer() {
             tl.to('.footer__up', {x: -80, duration: 3})
             tl.to('.js-footer-hero', {x: 60, duration: 3})
         } else if(deviceType === DeviceType.MOBILE) {
-            tl.fromTo('.js-footer-logo', {x: 400, y: 400}, {y: -15, x: 400, duration: 1})
+            tl.fromTo('.js-footer-logo', {x: 400, y: 400}, {y: -10, x: 340, duration: 1})
             tl.fromTo('.footer__up', {x: -100, duration: 3}, {x: 0})
             tl.fromTo('.js-footer-hero', {x: 140, duration: 3}, {x: 40})
         } else {

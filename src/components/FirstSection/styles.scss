@@ -208,7 +208,6 @@
         transform: translateX(-50%);
         z-index: 0;
         //animation: logo 10s linear infinite reverse;
-        width:120vh;
 
         img {
             width: 100%;
@@ -370,12 +369,10 @@
             }
         }
         &__logo {
-            top: 15vh;
-            width: 115vw;
-
-            img {
-                scale: 0.83333;
-            }
+            top: 16vh;
+            width: 100vw;
+            left: 50%;
+            transform: translateX(-50%);
         }
         &__cloud-1 {
             top: 36vh;

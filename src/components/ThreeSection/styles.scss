@@ -312,7 +312,7 @@
     }
 
     @media (max-width: 640px) {
-        padding-top: 250px;
+        padding-top: 400px;
         height: 890px;
         
         &__bg {
@@ -330,11 +330,11 @@
             }
 
             &-city {
-                margin-top: -60%;
+                margin-top: 0;
                 top: 0%;
             }
             &-sun {
-                top: 0px;
+                top: 100px;
             }
         }
         &__container {

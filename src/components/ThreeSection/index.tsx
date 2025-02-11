@@ -47,7 +47,7 @@ export default function ThreeSection() {
             scrollTrigger: {
                 trigger: ".js-three-section-trigger",
                 scrub: false,
-                start: "-=300 100",
+                start: "-=600 100",
                 end: `${endpoint} top`,
             },
         });
@@ -56,7 +56,7 @@ export default function ThreeSection() {
             tlMob.fromTo(
                 ".three-section__bg-city",
                 { y: 300, opacity: 1 },
-                { y: 0, duration: 2, ease: "power2.out" }
+                { y: 0, duration: 0.5, ease: "power2.out" }
             );
             tlMob.fromTo(
                 ".three-section__bg-sun",
