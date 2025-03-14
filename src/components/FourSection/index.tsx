@@ -40,7 +40,6 @@ export default function FourSection() {
 				trigger: '.js-four-section-trigger',
 				start: `bottom +=100`,
 				end: `+=${7400 - 2513} top`,
-				markers: true,
 				pin: deviceType === DeviceType.MOBILE ? false : '.four-section',
 				scrub: true,
 				onUpdate: () => {
@@ -289,7 +288,6 @@ export default function FourSection() {
 			<img
 				className='four-section__cloud-1 js-four-cloud-1'
 				src={cloud_1}
-				style={{ background: 'red' }}
 				alt=''
 			/>
 			<div className='js-four-section-trigger'></div>
